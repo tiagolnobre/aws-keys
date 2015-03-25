@@ -84,7 +84,7 @@ RSpec.describe AwsKeys do
       new_file.write()
     }
 
-    after(:all){ FileUtils.rm_rf(file)}
+    after(:all){ FileUtils.rm_rf(@file)}
 
     it 'with profile' do  
       expect(described_class.load).to eq(@yml_content)
