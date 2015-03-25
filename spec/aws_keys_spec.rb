@@ -63,7 +63,7 @@ RSpec.describe AwsKeys do
   context "when load aws keys from ~/aws/credentials file" do
 
     before(:all){
-      FileUtils.mkdir(ENV["HOME"] + "/aws", :noop => true)
+      FileUtils.mkdir(ENV["HOME"] + "/aws") unless File.exist?(ENV["HOME"] + "/aws")
 
       @admin = {
         "aws_access_key"=>"admin_access_key", 
