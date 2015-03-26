@@ -1,15 +1,14 @@
+[![Build Status](https://travis-ci.org/macwadu/aws_keys.svg?branch=master)](https://travis-ci.org/macwadu/aws_keys)
+[![GitHub version](https://badge.fury.io/gh/macwadu%2Faws_keys.svg)](http://badge.fury.io/gh/macwadu%2Faws_keys)
+
 # AwsKeys
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/aws_keys`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'aws_keys'
+gem 'aws-keys'
 ```
 
 And then execute:
@@ -18,11 +17,53 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install aws_keys
+    $ gem install aws-keys
 
 ## Usage
 
-TODO: Write usage instructions here
+### Use environment variables
+```ruby
+ENV["AWS_ACCESS_KEY"]="my_access_key"
+ENV["AWS_SECRET_KEY"]="my_secret_key"
+
+AwsKeys.load
+=> {"aws_access_key"=>"my_access_key", "aws_secret_key"=>"my_secret_key"}
+```
+
+### Use yml file
+
+File: ~/.aws.yml
+```
+---
+aws_access_key: my_access_key
+aws_secret_key: my_secret_key
+```
+
+```ruby
+AwsKeys.load
+=> {"aws_access_key"=>"my_access_key", "aws_secret_key"=>"my_secret_key"}
+```
+### Use ini ~/aws/credentials file
+
+File: ~/aws/credentials
+```
+[default]
+aws_access_key = my_access_key
+aws_secret_key = my_secret_key
+
+[admin]
+aws_access_key = admin_access_key
+aws_secret_key = admin_secret_key
+```
+
+```ruby
+AwsKeys.load
+=> {"aws_access_key"=>"my_access_key", "aws_secret_key"=>"my_secret_key"}
+
+AwsKeys.load(profile: "admin")
+=> {"aws_access_key"=>"admin_access_key", "aws_secret_key"=>"admin_secret_key"}
+
+```
 
 ## Development
 
@@ -32,7 +73,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/aws_keys/fork )
+1. Fork it ( https://github.com/[my-github-username]/aws-keys/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
