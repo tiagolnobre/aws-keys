@@ -35,7 +35,7 @@ AwsKeys.load
 ### Use yml file
 
 File: ~/.aws.yml
-```
+```yaml
 ---
 aws_access_key: my_access_key
 aws_secret_key: my_secret_key
@@ -48,7 +48,7 @@ AwsKeys.load
 ### Use ini ~/aws/credentials file
 
 File: ~/aws/credentials
-```
+```ini
 [default]
 aws_access_key = my_access_key
 aws_secret_key = my_secret_key
