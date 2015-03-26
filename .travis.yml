@@ -3,5 +3,5 @@ rvm:
   - 2.1.5
 
 script:
-  - bundle exec rake rake bump:patch
+  - bundle exec rake bump:patch
   - bundle exec rake release
