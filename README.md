@@ -3,6 +3,8 @@
 
 # AwsKeys
 
+Read the aws keys from ENV, yml file and ~/aws/credentials
+
 ## Installation
 
 Add this line to your application's Gemfile:
