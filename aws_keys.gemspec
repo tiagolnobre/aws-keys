@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'aws_keys/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "aws_keys"
+  spec.name          = "aws-keys"
   spec.version       = AwsKeys::VERSION
   spec.authors       = ["tiago"]
   spec.email         = ["tiago.nobre@mendeley.com"]
