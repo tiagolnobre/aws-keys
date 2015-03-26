@@ -1,7 +1,12 @@
 language: ruby
+
 rvm:
   - 2.1.5
 
 script:
   - bundle exec rake bump:patch
-  - bundle exec rake release
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: 9366a5792327ea3ee44371e8a625aaf8
