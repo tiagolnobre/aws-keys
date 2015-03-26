@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/macwadu/aws_keys.svg?branch=master)](https://travis-ci.org/macwadu/aws_keys)
-[![GitHub version](https://badge.fury.io/gh/macwadu%2Faws_keys.svg)](http://badge.fury.io/gh/macwadu%2Faws_keys)
+[![Gem Version](https://badge.fury.io/rb/aws_keys.svg)](http://badge.fury.io/rb/aws_keys)
 
 # AwsKeys
 
