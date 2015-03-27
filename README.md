@@ -1,5 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/aws-keys.svg)](http://badge.fury.io/rb/aws-keys)
-[![Gem Version](https://badge.fury.io/rb/aws_keys.svg)](http://badge.fury.io/rb/aws-keys)
+[![Build Status](https://travis-ci.org/macwadu/aws-keys.svg?branch=master)](https://travis-ci.org/macwadu/aws-keys)
 
 # AwsKeys
 
