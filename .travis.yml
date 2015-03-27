@@ -12,7 +12,6 @@ env:
 after_success:
 - git config --global user.email ${GIT_NAME}
 - git config --global user.name ${GIT_EMAIL}
-- bump patch --tag --commit-message [Travis ${TRAVIS_BUILD_NUMBER}]
-- coveralls
-- git add -A . && git commit -m "Travis ${TRAVIS_BUILD_NUMBER}" && git push origin master
+- bump patch --tag
+- 'git commit -m "Travis ${TRAVIS_BUILD_NUMBER}" && git push origin master'
 - git push -f https://${GH_TOKEN}@github.com/macwadu/aws-keys.git --tags
