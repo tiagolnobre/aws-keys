@@ -1,23 +1,18 @@
 language: ruby
-
 rvm:
-  - 2.1.5
-
+- 2.1.5
 script:
-  - bundle exec rake bump:patch
-
+- bundle exec rake bump:patch
 deploy:
   provider: rubygems
   api_key:
     secure: 9366a5792327ea3ee44371e8a625aaf8
-
 env:
   global:
-    - secure: EothsOWVrltWOXGEmqC7tGWDtQlUFvbAersc0tlhczSrK+gbPPeGPtF32thsJLQ1uNeJeEX9DbLs7RLqlqBLoa+xtu9nf8YKsdJTWMPtrQClelWqL
- +  - secure: CtgducCs9vZfj2CYOLBufVEoagkhYp5o9bbAZO9swKHTGBs/Bxn5rD1+AQ5U2c7signtyNODXQTNxr2PqaA51KFbk8KMvgJRPoYJyWJjK2ItXcYkj
-  
+    secure: luJM9/w4oQWqCvXU5Cs40Iqht0mHnspXcmxlOEES6Q8SsG3x4lB6I7cgcdoRaJshBvDE6CEZuEEzK800YNU6nK1Nv7kwcqBt96K7dClubtNt7203iEG133Hv0A9SrducxC9wj65jgJIppSOTDd3yMJspPMgwr2SkqN+i2hjo/Ho=
 after_success:
 - git config --global user.email ${GIT_NAME}
 - git config --global user.name ${GIT_EMAIL}
 - coveralls
-- '[ "${TRAVIS_BRANCH}" = "master" ] && git tag v${GEM_VERSION} && git push -f https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git --tags'
+- '[ "${TRAVIS_BRANCH}" = "master" ] && git tag v${GEM_VERSION} && git push -f https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${TRAVIS_REPO_SLUG}.git
+  --tags'
