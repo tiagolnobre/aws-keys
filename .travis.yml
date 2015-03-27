@@ -2,3 +2,18 @@ language: ruby
 rvm:
 - 2.1.5
 
+deploy:
+  provider: rubygems
+  api_key:
+    secure: 9366a5792327ea3ee44371e8a625aaf8
+env:
+  global:
+    secure: luJM9/w4oQWqCvXU5Cs40Iqht0mHnspXcmxlOEES6Q8SsG3x4lB6I7cgcdoRaJshBvDE6CEZuEEzK800YNU6nK1Nv7kwcqBt96K7dClubtNt7203iEG133Hv0A9SrducxC9wj65jgJIppSOTDd3yMJspPMgwr2SkqN+i2hjo/Ho=
+after_success:
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+git config --global user.email ${GIT_NAME}
+git config --global user.name ${GIT_EMAIL}
+bump patch --tag
+git commit -m "Travis ${TRAVIS_BUILD_NUMBER} [ci skip]"
+git push -f https://${GH_TOKEN}@github.com/macwadu/aws-keys.git --tags -m "Travis ${TRAVIS_BUILD_NUMBER}"
+  fi
