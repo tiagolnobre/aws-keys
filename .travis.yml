@@ -14,5 +14,5 @@ after_success:
 - git config --global user.email ${GIT_NAME}
 - git config --global user.name ${GIT_EMAIL}
 - coveralls
-- '[ "${TRAVIS_BRANCH}" = "master" ] && git tag v${GEM_VERSION} && git push -f https://${GH_TOKEN}@github.com/macwadu/aws-keys.git
+- git tag v${GEM_VERSION} && git push -f https://${GH_TOKEN}@github.com/macwadu/aws-keys.git
   --tags'
